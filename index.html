@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fay software - Clarity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="notify" id="screen_n">
+
+        <h1>Wrong screen resolution</h1>
+        <p>Your current screen resolution is not supported in this version of Clarity</p>
+
+    </div>
+
+    <div id="overlay"></div>
+    <div id="about" class="normal_window">
+
+        <p class="title">About us <a class="actions" onclick="close_window('about')">x</a></p>
+
+        <h1>About Clarity</h1>
+        <p>
+
+            Clarity was made in 2025, by a student in Hungary. Her name was Polokalap. <br>
+            She bought a 1 year subscription to a Video Editing software by an unnamed company, <br> 
+            and when she tried to cancel it, she had to pay a fee of 90 euros. <br>
+            After that, she got really-really angry, and started making Clarity.
+
+        </p>
+
+        <h2>Developers:</h2>
+        <ul>
+
+            <li>Polokalap - Founder</li>
+
+        </ul>
+
+        <h2>Version: {version} </h2>
+        <a href="https://ko-fi.com/Polokalap" target="_blank">Support my work!</a>
+
+    </div>
+
+    <main>
+
+        <div id="editor" class="window">
+
+            <p class="title">Timeline <a class="actions" onclick="close_window('editor')">x</a></p>
+
+            <div class="tools">
+
+                <a onclick="tool_action('selection')">e</a>
+                <a onclick="tool_action('selection')">x</a>
+                <a onclick="tool_action('selection')">a</a>
+                <a onclick="tool_action('selection')">m</a>
+                <a onclick="tool_action('selection')">p</a>
+                <a onclick="tool_action('selection')">l</a>
+                <a onclick="tool_action('selection')">e</a>
+
+            </div>
+
+            <div class="timeline">
+
+
+
+            </div>
+
+        </div>
+
+        <div id="media" class="window">
+
+            <p class="title">Media <a class="actions" onclick="close_window('media')">x</a></p>
+
+            <div class="media_content">
+
+                <img src="img/logo.png" alt="logo" width="128">
+                <figure>meow.mp4</figure>
+
+            </div>
+
+        </div>
+
+        <div id="effects" class="window">
+
+            <p class="title">Effects <a class="actions" onclick="close_window('effects')">x</a></p>
+
+            <div class="effects_content">
+
+                <a class="effect">meow</a>
+
+            </div>
+
+        </div>
+
+                <div id="bar">
+
+            <img src="img/logo.png" alt="logo" title="About Clarity..." onclick="open_window('about')">
+
+            <div class="options">
+
+                <div class="option">File
+
+                    <p class="option_menu">
+
+                        <a>New project</a>
+                        <a>Open project</a>
+                        <a>Recent projects</a>
+                        <a>Save project</a>
+                        <a>Save project as</a>
+                        <a>Export project</a>
+                        <a>Quit...</a>
+
+                    </p>
+
+                </div>
+
+                <div class="option">Select
+
+                    <p class="option_menu">
+
+                        <a>All</a>
+                        <a>Invert</a>
+                        <a>None</a>
+                        <a>Delete selected</a>
+
+                    </p>
+
+                </div>
+
+                <div class="option">Effects
+
+                    <p class="option_menu">
+
+                        <a>All</a>
+                        <a>Invert</a>
+                        <a>None</a>
+                        <a>Delete selected</a>
+
+                    </p>
+
+                </div>
+
+                <div class="option">Help
+
+                    <p class="option_menu">
+
+                        <a>Tutorials</a>
+                        <a>Website</a>
+                        <a>Version</a>
+
+                    </p>
+
+                </div>
+
+                <div class="option">View
+
+                    <p class="option_menu">
+
+                        <a onclick="toggle_window_check('editor')">Timeline</a>
+                        <a onclick="toggle_window_check('media')">Media</a>
+                        <a onclick="toggle_window_check('effects')">Effects</a>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        function close_window(objectId) {
+
+            document.getElementById(objectId).style.display = "none";
+
+        }
+
+        function open_window(objectId, flex) {
+
+            document.getElementById(objectId).style.display = flex ? "flex" : "block";
+
+        }
+
+        function tool_action(tool) {
+
+
+
+        }
+
+        function toggle_window_check(objectId) {
+
+            const element = document.getElementById(objectId);
+
+            if (!element) return;
+
+            const isVisible = window.getComputedStyle(element).display !== "none";
+
+            element.style.display = isVisible ? "none" : "flex";
+        }
+
+    </script>
+
+</body>
+</html>
